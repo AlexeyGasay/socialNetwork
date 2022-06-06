@@ -1,0 +1,1 @@
+export const dbURL = 'https://alexeygasay.herokuapp.com'

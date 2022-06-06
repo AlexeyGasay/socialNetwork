@@ -1,0 +1,70 @@
+.message_modal_block
+{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba($color: #000000, $alpha: .5);
+  transition: .3s;
+}
+
+.message_modal
+{
+  background: #fff;
+  padding: 20px;
+  width: 420px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.message_input
+{
+  padding: 10px;
+  resize: none;
+  height: 200px;
+  font-size: 17px;
+  outline: invert;
+  outline-color: rgb(115, 130, 218);
+  width: 100%;
+
+
+  &::placeholder
+  {
+    color: #877a8b;
+  }
+}
+
+
+
+.modal_handle_block
+{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.message_btn
+{
+  font-size: 18px;
+  border-radius: 3px;
+  border: none;
+  background: rgba($color: #000000, $alpha: .3);
+  color: rgb(41, 37, 37);
+  padding: 5px;
+  cursor: pointer;
+}
+
+.message_close_btn
+{
+  &:disabled
+  {
+    color: red;
+  }
+}
