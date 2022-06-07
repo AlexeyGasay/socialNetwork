@@ -1,4 +1,4 @@
-import React, { FC, useState, Dispatch, SetStateAction } from 'react';
+import React, { FC, useState, Dispatch, SetStateAction, useEffect } from 'react';
 import { fetchLogin, fetchRegistration, ILoginData } from '../../redux/asyncActions/loginAndReg';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 
@@ -70,6 +70,9 @@ const Login = ({toggle, style, isOpen}: IloginProps) => {
     fetchRegistration(userData)
   }
 
+  useEffect(() => {
+    validator();
+  }, [userData.username, userData.password])
 
 
   return (
@@ -88,7 +91,6 @@ const Login = ({toggle, style, isOpen}: IloginProps) => {
         {!validated && <h2 className={styles.warning}>Не менее 3-х символов в логине и пароле {"исп только английский"}</h2>}
 
         <input
-
           onBlur={() => validator()}
           value={userData.username}
           className={styles.login_input}

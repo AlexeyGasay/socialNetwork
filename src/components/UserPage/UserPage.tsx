@@ -9,6 +9,12 @@ import MessageModal from './MessageModal/MessageModal';
 
 import styles from "./user-page.module.scss"
 
+interface IUserInfo {
+  user_id: string | number;
+  username: string;
+  user_avatar: string | null;
+  
+}
 
 const UserPage = () => {
 
@@ -18,6 +24,8 @@ const UserPage = () => {
 
   const { userPosts } = useAppSelector(state => state.postsReducer);
   const { user_id } = useAppSelector(state => state.userReducer.user);
+
+  const [userInfo, setUserInfo] = useState<IUserInfo[]>([]);
 
   const [isOpenMsgModal, setIsOpenMsgModal] = useState<boolean>(false);
 
@@ -43,7 +51,15 @@ const UserPage = () => {
 
   useEffect(() => {
     dispatch(fetchUserPosts(user_id_param))
+  }, []);
+
+  useEffect(() => {
+    fetch(`${dbURL}/api/getUserInfo?user_id=${user_id_param}`)
+      .then(res => res.json())
+      .then(data => setUserInfo(data))
   }, [])
+
+
 
 
   return (
@@ -63,7 +79,7 @@ const UserPage = () => {
           </div>
 
           <div className={styles.user_info}>
-            <p className={styles.user_status}>Lorem</p>
+            <p className={styles.user_status}>{userInfo[0].username}</p>
           </div>
 
           {checkPerson() ?
@@ -108,7 +124,7 @@ const UserPage = () => {
               )
             })
             :
-            <p>У данного пользователя еще нет постов</p>
+            <p className={styles.no_posts}>У данного пользователя еще нет постов</p>
 
           }
         </div>

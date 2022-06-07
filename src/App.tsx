@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Login from './components/login/Login';
+import Login from './components/Login/Login';
 import { useAppDispatch, useAppSelector } from './redux/hooks';
 import styles from "./app-styles.module.scss"
 import Header from './components/header/Header';

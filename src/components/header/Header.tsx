@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAppSelector, useDebounce } from '../../redux/hooks';
-import Login from '../login/Login';
+import Login from '../Login/Login';
 import styles from "./header.module.scss"
 
 import logo from "../../assets/images/header/logo.svg"
@@ -60,8 +60,10 @@ const Header = () => {
   // }
 
   const onBlurHandler = () => {
-    setSearchResult([]);
-    setSearchText('');
+    setTimeout(() => {
+      setSearchResult([]);
+      setSearchText('');
+    }, 300)
   }
 
 

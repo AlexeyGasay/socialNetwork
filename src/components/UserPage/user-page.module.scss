@@ -19,7 +19,7 @@
   width: 600px;
   min-height: 300px;
   max-height: 400px;
-  background: #000;
+  background: rgb(134, 132, 132);
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -73,6 +73,11 @@
 
 }
 
+
+.no_posts
+{
+  text-align: center;
+}
 
 
 // 
