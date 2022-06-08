@@ -1,0 +1,36 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+.App {
+    background: rgba(0, 25, 53, 1);
+    overflow-x: hidden;
+    font-family: sans-serif;
+    height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    // border: 1px solid red;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.container {
+    width: 100%;
+
+}
+
+.search_input {
+    display: none;
+}
+
