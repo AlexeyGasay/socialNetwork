@@ -1,0 +1,41 @@
+.tools_panel
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+
+.tools_pane__item
+{
+  margin: 0 20px;
+  cursor: pointer;
+  padding: 20px;
+
+  &:hover>img
+  {
+    transform: translateY(-5px);
+  }
+
+  img
+  {
+    transition: .3s;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: 600px)
+{
+  .home_page
+  {
+    width: 100%;
+  }
+
+  .tools_panel
+  {
+    width: 95%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+}
