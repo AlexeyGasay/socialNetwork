@@ -1,6 +1,12 @@
 CREATE DATABASE tumblr;
 
-CREATE TABLE user_list (user_id BIGSERIAL PRIMARY KEY, username VARCHAR(15), password VARCHAR(100), user_avatar TEXT DEFAULT null, CONSTRAINT username_unique UNIQUE (username));
+CREATE TABLE user_list (
+                user_id BIGSERIAL PRIMARY KEY,
+                username VARCHAR(25),
+                password VARCHAR(100),
+                user_avatar TEXT DEFAULT null,
+                CONSTRAINT username_unique UNIQUE (username)
+        );
 
 INSERT INTO user_list (username, password) VALUES ('qwe', 'qwe');
 
