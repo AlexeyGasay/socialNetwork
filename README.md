@@ -8,5 +8,5 @@
 
 Бекенд написан на EXPRESS/PostgreSQL.
 
-#### http://89.108.115.52:3000/explore - Сайт.
+#### http://185.225.34.63:3000/explore - Сайт.
 #### https://github.com/AlexeyGasay/socialNetwork - Репозиторий.
